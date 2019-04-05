@@ -19,7 +19,14 @@ app.get('/', (req, res, next) => {
 });
 
 app.get('/:iaid', (req, res, next) => {
-    res.send(data[req.params.iaid]);
+
+    if (data.hasOwnProperty(req.params.iaid)) {
+        res.send(data[req.params.iaid]);
+    } else {
+        res.send({ response: `No guides related to ${req.params.iaid}` });
+    }
+
+
 });
 
 app.listen(process.env.PORT || 3000, function () {
