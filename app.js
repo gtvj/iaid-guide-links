@@ -24,4 +24,4 @@ app.get('/:iaid', (req, res, next) => {
 
 app.listen(process.env.PORT || 3000, function () {
     console.log('CORS-enabled web server listening on port 80')
-})
+});
