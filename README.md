@@ -13,7 +13,7 @@ fetch(`https://mighty-island-64939.herokuapp.com/${window.location.href.match(/(
     .then(response => response.json())
     .then(data => {
         console.log(JSON.stringify(data));
-        
+
         fetch('https://vast-lowlands-86122.herokuapp.com/', {
             method: 'POST',
             mode: 'cors',
@@ -22,11 +22,11 @@ fetch(`https://mighty-island-64939.herokuapp.com/${window.location.href.match(/(
             },
             redirect: 'follow',
             referrer: 'no-referrer',
-            body: JSON.stringify(data)
+            body: JSON.stringify({guides: data})
         })
-        .then(response => response.text())
-        .then(text => console.log(text))
-        
+            .then(response => response.text())
+            .then(text => console.log(text))
+
     })
     .catch(error => console.error(error));
 ``` 
