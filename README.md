@@ -20,8 +20,6 @@ fetch(`https://mighty-island-64939.herokuapp.com/${window.location.href.match(/(
             headers: {
                 "Content-Type": "application/json"
             },
-            redirect: 'follow',
-            referrer: 'no-referrer',
             body: JSON.stringify({guides: data})
         })
             .then(response => response.text())
